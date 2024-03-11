@@ -49,7 +49,7 @@ You can purchase ada-1461 through this link [here](https://www.devicemart.co.kr/
 
 Here's a video outlining how it works and a timelapse of it looking after a plant for a week:
 
-[![Mod demo](https://img.youtube.com/vi/E6wkvTG2Ofs/0.jpg)](https://www.youtube.com/watch?v=E6wkvTG2Ofs "Video Title")
+[![Mod demo](https://i.ytimg.com/vi/qUL7x_0r-bA/maxresdefault.jpg)](https://www.youtube.com/watch?v=7J-s3NE6yNc "Video Title")
 
 # 라이센스 
 [GPL 3.0](https://olis.or.kr/license/Detailselect.do?lId=1072&mapCode=010072)
