@@ -10,7 +10,7 @@
 
 - 아두이노 우노  
 - ada-1461
-- M-M 점퍼선 8개 
+- M-M 점퍼선 3개 
 - USB 2.0 케이블 Type A/B
 
 
@@ -30,7 +30,7 @@ You can purchase ada-1461 through this link [here](https://www.devicemart.co.kr/
 
 # 코드 다운로드 
 
-    git clone https://
+    git clone https://github.com/mamze-web/MCU_SBC_Neopixel.git
 
 ## 라이브러리  
 1. Library 
@@ -47,7 +47,7 @@ You can purchase ada-1461 through this link [here](https://www.devicemart.co.kr/
 
 # 동작영상 
 
-Here's a video outlining how it works and a timelapse of it looking after a plant for a week:
+Here's a video showing the Neopixel in action:
 
 [![Mod demo](https://i.ytimg.com/vi/qUL7x_0r-bA/maxresdefault.jpg)](https://www.youtube.com/watch?v=7J-s3NE6yNc "Video Title")
 
