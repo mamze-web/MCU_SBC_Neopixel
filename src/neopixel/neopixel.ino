@@ -30,7 +30,7 @@ void loop(){
 
 // 지정된 색으로 네오픽셀을 채우는 함수
 void colorWipe(uint32_t color, int wait){
-    for (int i = 0; i < strip.numPixels(); i++){ㅁㄴ
+    for (int i = 0; i < strip.numPixels(); i++){
         strip.setPixelColor(i, color); // i번째 네오픽셀의 색을 설정
 
         strip.show(); // 변경된 색상을 네오픽셀에 표시
