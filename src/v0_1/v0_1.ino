@@ -25,7 +25,7 @@ void loop(){
     colorWipe(strip.Color(255, 0 , 0), 50); // 빨간색, 50ms 딜레이
 
     // rainbow 함수 호출하여 네오픽셀에 무지개 효과 생성
-    rainbow(10); // 10ms 딜레이
+    //rainbow(10); // 10ms 딜레이
 }
 
 // 지정된 색으로 네오픽셀을 채우는 함수
