@@ -1,0 +1,23 @@
+flowchart TD
+    A(["시작"]) --> B["네오픽셀 초기화"]
+    B --> C["시리얼 통신 시작"]
+    C --> D["센서 값 읽기 A0"]
+    D --> E["센서 값 시리얼 출력"]
+    E --> F{"센서 값 < 500?"}
+    F -->|Yes| G["네오픽셀 초록색으로 설정"]
+    F -->|No| H["네오픽셀 끄기 (검은색)"]
+    G --> I["네오픽셀 색상 표시"]
+    H --> I
+    I --> J["0.1초 대기"]
+    J --> D
+    
+    style A fill:#E1BEE7,stroke:#FFFFFF,stroke-width:2px
+    style B fill:#BBDEFB,stroke:#FFFFFF,stroke-width:2px
+    style C fill:#BBDEFB,stroke:#FFFFFF,stroke-width:2px
+    style D fill:#FFF9C4,stroke:#FFFFFF,stroke-width:2px
+    style E fill:#FFF9C4,stroke:#FFFFFF,stroke-width:2px
+    style F fill:#FFE0B2,stroke:#FFFFFF,stroke-width:2px
+    style G fill:#C8E6C9,stroke:#FFFFFF,stroke-width:2px
+    style H fill:#FFCDD2,stroke:#FFFFFF,stroke-width:2px
+    style I fill:#B2EBF2,stroke:#FFFFFF,stroke-width:2px
+    style J fill:#F8BBD0,stroke:#FFFFFF,stroke-width:2px
