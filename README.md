@@ -38,9 +38,11 @@
 |   VCC    | 5V   |
 |   GND    | GND  |
 
-## 라이브러리  
+## 라이브러리 
 1. [AdafruitNeopixel](https://github.com/adafruit/Adafruit_NeoPixel)  
 : Adafruit NeoPixel 라이브러리는 WS2813와 같은 개별 주소 지정이 가능한 RGB LED를 쉽게 제어할 수 있게 해주는 라이브러리입니다. 이 라이브러리를 사용하면 여러 개의 LED를 연결하고 각각의 색상을 개별적으로 제어할 수 있습니다.
+
+### [라이브러리 설치하는 법](https://github.com/adafruit/Adafruit_NeoPixel?tab=readme-ov-file#installation)
 
 # 순서도 
 ![flowchart](/img/Neopixel-2024-07-09-055827.png)
