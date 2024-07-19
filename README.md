@@ -46,7 +46,7 @@
 ![flowchart](/img/Neopixel-2024-07-09-055827.png)
 
 # 코드 
-## [v0_1](/src/v0_1/v0_1.ino)
+## [code.ino](/src/code/code.ino)
 
 # 함수 
 1. setPixelColor(n,red, green, blue): LED의 색상을 설정하는 함수
