@@ -44,12 +44,17 @@
 
 # 순서도 
 ![flowchart](/img/Neopixel-2024-07-09-055827.png)
+
+# 코드 
+## [v0_1](/src/v0_1/v0_1.ino)
+
 # 함수 
 1. setPixelColor(n,red, green, blue): LED의 색상을 설정하는 함수
    - n: LED의 인덱스 
    - red, green, blue: 각 색상 채널의 강도 (0-255)
 
 2. strip.show() : LED 색상을 변경하는 함수 
+
 
 
 
