@@ -28,8 +28,9 @@ void loop() {
     Serial.println(sensorValue);
     
     // 센서 값에 따라 LED 색상 변경
-    if (sensorValue < 500) {
-        colorFill(strip.Color(0, 255, 0)); // 초록색으로 네오픽셀을 채움
+    if (sensorValue < 600) {
+        colorFill(strip.Color(186, 74, 217)); // 초록색으로 네오픽셀을 채움
+        //colorFill(strip.Color(255, 0, 0));
     } else {
         colorFill(strip.Color(0, 0, 0)); // LED를 끔 (검은색)
     }
