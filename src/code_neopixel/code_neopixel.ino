@@ -1,6 +1,5 @@
-#include <Adafruit_NeoPixel.h>
-
 // Adafruit_NeoPixel 라이브러리: LED 스트립을 쉽게 제어할 수 있게 해주는 라이브러리입니다.
+#include <Adafruit_NeoPixel.h>
 
 // 네오픽셀을 연결한 핀과 네오픽셀 개수 정의
 #define LED_PIN 8
