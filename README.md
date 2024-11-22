@@ -1,71 +1,129 @@
-![img](https://cdn-shop.adafruit.com/970x728/1138-00.jpg)
+# 🎬 공학도서관 오리지널 컨텐츠
 
-[![YouTube Channel Views](https://img.shields.io/youtube/channel/views/UCz5BOU9J9pB_O0B8-rDjCWQ?label=YouTube&style=social)](https://www.youtube.com/watch?v=tQJWNoRK7sc)
+# 🌈 무드등 만들기
 
-# 막대 조명 만들기
+![img](/img/2_Neopixel_main.jpg)
 
-프로그램 가능한 LED를 활용하여 조명만들어보기
+[![YouTube Channel Views](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/BVbMFG6_8P0?si=0S-6G1tsdlA6tRvF)
 
-#### [프로그램 가능한 LED란?](/doc/aboutNeoPixel.md)
+## 📝 프로젝트 소개
+이 프로젝트는 프로그램 가능한 LED(네오픽셀)와 조도센서를 활용하여 주변 밝기에 반응하는 무드등을 만드는 과정을 설명합니다. 어두워지면 자동으로 켜지고 밝아지면 꺼지는 스마트한 조명을 직접 만들어볼 수 있습니다.
 
-# 하드웨어 
+## 📚 사전학습
+이 프로젝트를 시작하기 전에 아래 내용을 먼저 공부하고 오시면 좋아요.
 
-- 아두이노 우노  
-- [WS2813 RGB LED 스트립 30LED/ 1m](https://vctec.co.kr/product/detail.html?product_no=13996)
-- M-M 점퍼선 6개 
+- 아두이노 기초
+  - 아두이노 IDE 설치하기
+  - 아두이노 라이브러리 추가하는 방법 알아보기
+  - 아날로그 신호 읽는 방법 이해하기
+
+- 전자부품 이해하기
+  - 브레드보드 사용법 알아보기
+  - LED 연결 방법 익히기
+  - 센서 데이터 읽는 방법 알아보기
+
+- 프로그래밍 기초
+  - 변수 활용하기
+  - 조건문(if) 사용하기
+  - 반복문(for) 이해하기
+
+## 🎯 성취 목표
+- 조도센서를 이용하여 주변 밝기에 반응하는 무드등을 만들 수 있다.
+- 네오픽셀 LED의 색상을 자유롭게 제어할 수 있다.
+- 밝기 임계값을 설정하여 LED를 자동으로 켜고 끌 수 있다.
+- 여러 개의 LED를 순차적으로 제어할 수 있다.
+- 센서값을 읽고 이를 기반으로 동작을 제어할 수 있다.
+
+## 🛠 준비물
+- 아두이노 우노 보드
+- WS2813 RGB LED 스트립 (30LED/1m)
+- 조도센서 모듈
+- M-M 점퍼선 6개
 - USB 2.0 케이블 Type A/B
-- [조도센서 모듈](https://www.devicemart.co.kr/goods/view?no=1287124) 
 
-
-**주의: 점퍼선 연결시 케이블을 제거하고 진행합니다.**
-
-# 회로도
+## 📋 회로 연결 방법
 ![schematic](/img/schematic_v1.png)
 
-## 선 작업 
+### 네오픽셀 LED 연결
+| Arduino UNO | WS2813 |
+|------------|---------|
+| D8         | DI      |
+| 5V         | 5V      |
+| GND        | GND     |
 
-| [Arduino UNO GPIO](https://docs.arduino.cc/resources/pinouts/A000066-full-pinout.pdf) | WS2813  |
-|-----------|------|
-|   D8     | DI  |
-|   5V      | 5V  |
-|   GND     | GND  |
+### 조도센서 연결
+| Arduino UNO | 조도센서 |
+|------------|---------|
+| A0         | OUT     |
+| VCC        | 5V      |
+| GND        | GND     |
 
-* WS2813은 데이터를 직렬로 전달합니다. 즉, 첫 번째 LED가 데이터를 받아 처리한 후 나머지 데이터를 다음 LED로 전달합니다.
+> **주의**: 점퍼선 연결 시 반드시 아두이노의 전원을 끄고 진행하세요!
 
-| [Arduino UNO GPIO](https://docs.arduino.cc/resources/pinouts/A000066-full-pinout.pdf) | 조도센서  |
-|-----------|------|
-|   A0     | OUT  |
-|   VCC    | 5V   |
-|   GND    | GND  |
+## 💾 실습 코드
+| 파일명 | 설명 |
+|--------|------|
+| [code_nexpixel.ino](/src/code_neopixel/code_neopixel.ino) | 무드등 기본 코드 |
 
-## 라이브러리 
-1. [AdafruitNeopixel](https://github.com/adafruit/Adafruit_NeoPixel)  
-: Adafruit NeoPixel 라이브러리는 WS2813와 같은 개별 주소 지정이 가능한 RGB LED를 쉽게 제어할 수 있게 해주는 라이브러리입니다. 이 라이브러리를 사용하면 여러 개의 LED를 연결하고 각각의 색상을 개별적으로 제어할 수 있습니다.
+## 💻 주요 함수 설명
+1. `strip.show()`
+   - LED에 설정된 색상을 실제로 출력하는 함수
+   - 색상 설정 후 반드시 호출해야 변경사항이 적용됨
 
-### [라이브러리 설치하는 법](https://github.com/adafruit/Adafruit_NeoPixel?tab=readme-ov-file#installation)
+2. `colorFill(uint32_t color)`
+   - 모든 LED를 동일한 색상으로 설정하는 함수
+   - RGB 값을 기반으로 색상 지정 가능
 
-# 순서도 
-![flowchart](/img/Neopixel-2024-07-09-055827.png)
+## ➡️ 순서도
+![flowchart](/img/2_Neopixel.jpg)
 
-# 코드 
-## [code.ino](/src/code/code.ino)
+## 🚀 시작하기
+1. 회로를 제시된 도면대로 연결
+   - LED와 조도센서 방향에 주의하며 연결하기
+   - 전원이 꺼진 상태에서 연결하기
 
-# 함수 
-1. setPixelColor(n,red, green, blue): LED의 색상을 설정하는 함수
-   - n: LED의 인덱스 
-   - red, green, blue: 각 색상 채널의 강도 (0-255)
+2. 라이브러리 설치하기
+   - Arduino IDE 실행
+   - 툴 → 라이브러리 관리 선택
+   - 'Adafruit NeoPixel' 검색 후 설치
 
-2. strip.show() : LED 색상을 변경하는 함수 
+3. 코드 업로드 준비
+   - 아두이노와 컴퓨터 연결
+   - Arduino IDE에서 보드와 포트 선택
+   - 예제 코드 다운로드 및 IDE에서 열기
 
+4. 코드 업로드하기
+   - 코드 검증 (체크 버튼)
+   - 업로드 버튼 클릭
+   - 업로드 완료 메시지 확인
 
+5. 동작 테스트
+   - 시리얼 모니터 열기 (9600 baud)
+   - 조도센서 값 확인
+   - 손으로 센서를 가려 동작 테스트
 
+## 🔍 문제해결
+- LED가 켜지지 않아요
+  - 네오픽셀 LED의 방향이 헷갈릴 수 있어요. 갈색 선이 5V, 중간 선이 신호선, 흰색 선이 GND예요.
+  - 라이브러리가 설치되어 있는지 확인해보세요.
 
-## 응용하기
-1. 무드등 효과를 내도록하기
-2. 캠프파이어 효과를 내도록 하기
+- LED 색상이 이상해요
+  - WS2813의 신호선(DI)이 제대로 연결되어 있는지 확인해보세요.
+  - `strip.begin()`이 setup에서 호출되었는지 확인해보세요.
 
+- 조도센서가 동작하지 않아요
+  - 센서의 VCC와 GND가 바뀌지 않았는지 확인해보세요.
+  - 시리얼 모니터로 센서값이 제대로 읽히는지 확인해보세요.
 
+## 🌟 이렇게 업그레이드 해볼 수 있어요
+- 시계와 연동해서 저녁이 되면 자동으로 켜지게 해볼까요?
+  실시간 시계(RTC) 모듈을 추가하면 시간에 맞춰 동작하는 무드등을 만들 수 있어요.
 
+- 날씨 정보를 받아와서 날씨에 따라 다른 색상을 표현해보면 어떨까요?
+  비가 오면 파란색, 맑으면 노란색으로 바뀌게 할 수 있어요.
 
-# 라이센스 
-[GPL 3.0](https://olis.or.kr/license/Detailselect.do?lId=1072&mapCode=010072)
+- 무드등의 색상이 천천히 변하도록 만들어볼까요?
+  그라데이션 효과를 주면 더 아름다운 무드등이 될 거예요.
+
+## 📚 참고 자료
+- [네오픽셀 이란?](/doc/aboutNeoPixel.md)
