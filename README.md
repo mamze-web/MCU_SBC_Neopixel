@@ -4,7 +4,6 @@
 
 ![img](/img/2_Neopixel_main.jpg)
 
-[![YouTube Channel Views](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/BVbMFG6_8P0?si=0S-6G1tsdlA6tRvF)
 
 ## 📝 프로젝트 소개
 이 프로젝트는 프로그램 가능한 LED(네오픽셀)와 조도센서를 활용하여 주변 밝기에 반응하는 무드등을 만드는 과정을 설명합니다. 어두워지면 자동으로 켜지고 밝아지면 꺼지는 스마트한 조명을 직접 만들어볼 수 있습니다.
